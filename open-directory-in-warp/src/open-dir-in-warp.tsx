@@ -3,6 +3,7 @@ import { useEffect, useMemo } from "react";
 import fs from "fs";
 import path from "path";
 import { create } from "zustand";
+import config from "../config.json";
 
 interface Folder {
   name: string;
@@ -25,12 +26,7 @@ const MAX_RECENT_FOLDERS = 10;
 const HOME_DIR = process.env.HOME || "";
 const WORK_DIR = path.join(HOME_DIR, "Work");
 
-const SEARCH_PATHS = [
-  path.join(WORK_DIR, "bmads"),
-  path.join(WORK_DIR, "pet-projects"),
-  path.join(WORK_DIR, "projects"),
-  path.join(WORK_DIR, "raycast-extensions"),
-];
+const { searchPaths: SEARCH_PATHS } = config;
 
 const useStore = create<AppState>((set) => ({
   folders: [],

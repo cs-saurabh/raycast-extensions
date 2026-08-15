@@ -1,0 +1,11 @@
+{
+  "staticCommands": [
+    {
+      "name": "openzshrc",
+      "path": "/Users/username/.zshrc"
+    }
+  ],
+  "searchPaths": [
+    "/Users/username/Work"
+  ]
+}
